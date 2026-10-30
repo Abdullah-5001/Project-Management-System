@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Project Hub";
+}
+
+<section class="hero">
+    <div class="hero-copy">
+        <p class="eyebrow">Project hub</p>
+        <h1>Make project work feel <span>simple.</span></h1>
+        <p class="lead">A focused space to organize your projects, document your technology choices, and keep progress visible.</p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" asp-page="/Projects/Create">Add a project</a>
+            <a class="btn btn-outline-secondary" asp-page="/Projects/Index">View projects</a>
+        </div>
+    </div>
+    <div class="hero-note">
+        <div class="hero-icon">✦</div>
+        <p class="mb-1">Built for momentum</p>
+        <small>Capture the idea. Track the work. Ship with confidence.</small>
+    </div>
+</section>
+
+<section class="feature-row">
+    <div><strong>One clear view</strong><span>Keep every project detail easy to find.</span></div>
+    <div><strong>Simple CRUD</strong><span>Add, edit, and remove records in seconds.</span></div>
+    <div><strong>Ready to extend</strong><span>A clean foundation for your next feature.</span></div>
+</section>
+</div>

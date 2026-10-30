@@ -1,0 +1,21 @@
+@page "{id:int}"
+@model Software_Modelling_Technologies.Pages.Projects.EditModel
+@{
+    ViewData["Title"] = "Edit project";
+}
+
+<div class="form-page">
+    <a asp-page="Index" class="back-link">← Back to projects</a>
+    <p class="eyebrow">Update record</p>
+    <h1>Edit project</h1>
+    <p class="text-muted">Update the details for <strong>@Model.Project.Title</strong>.</p>
+    <form method="post" class="form-card mt-4">
+        <input type="hidden" asp-for="Project.Id" />
+        <input type="hidden" asp-for="Project.CreatedAt" />
+        <partial name="_ProjectForm" for="Project" />
+        <div class="form-actions">
+            <a asp-page="Index" class="btn btn-light">Cancel</a>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+    </form>
+</div>

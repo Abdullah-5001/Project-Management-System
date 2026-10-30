@@ -1,0 +1,16 @@
+CREATE TABLE Projects
+(
+    Id INTEGER NOT NULL CONSTRAINT PK_Projects PRIMARY KEY AUTOINCREMENT,
+    Title TEXT NOT NULL,
+    Author TEXT NOT NULL,
+    Description TEXT NOT NULL,
+    TechnologyStack TEXT NOT NULL,
+    Status TEXT NOT NULL DEFAULT 'Planned',
+    StartDate TEXT NULL,
+    EndDate TEXT NULL,
+    RepositoryUrl TEXT NULL,
+    CreatedAt TEXT NOT NULL DEFAULT (CURRENT_TIMESTAMP),
+    UpdatedAt TEXT NOT NULL DEFAULT (CURRENT_TIMESTAMP)
+);
+
+CREATE INDEX IF NOT EXISTS IX_Projects_UpdatedAt ON Projects (UpdatedAt DESC);

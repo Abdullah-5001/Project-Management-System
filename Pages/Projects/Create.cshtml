@@ -1,0 +1,19 @@
+@page
+@model Software_Modelling_Technologies.Pages.Projects.CreateModel
+@{
+    ViewData["Title"] = "Add project";
+}
+
+<div class="form-page">
+    <a asp-page="Index" class="back-link">← Back to projects</a>
+    <p class="eyebrow">New record</p>
+    <h1>Add a project</h1>
+    <p class="text-muted">Capture the details you need to keep your work organized.</p>
+    <form method="post" class="form-card mt-4">
+        <partial name="_ProjectForm" for="Project" />
+        <div class="form-actions">
+            <a asp-page="Index" class="btn btn-light">Cancel</a>
+            <button type="submit" class="btn btn-primary">Create project</button>
+        </div>
+    </form>
+</div>

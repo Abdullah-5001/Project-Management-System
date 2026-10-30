@@ -1,0 +1,52 @@
+@page
+@model Software_Modelling_Technologies.Pages.Projects.IndexModel
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<div class="page-heading">
+    <div>
+        <p class="eyebrow">Workspace</p>
+        <h1>Projects</h1>
+        <p class="text-muted mb-0">Keep track of your projects, technologies, and delivery status.</p>
+    </div>
+    <a class="btn btn-primary" asp-page="Create">Add project</a>
+</div>
+
+@if (Model.Projects.Count == 0)
+{
+    <div class="empty-state">
+        <h2>No projects yet</h2>
+        <p class="text-muted">Create your first project record to get started.</p>
+        <a class="btn btn-outline-primary" asp-page="Create">Create a project</a>
+    </div>
+}
+else
+{
+    <div class="project-grid">
+        @foreach (var project in Model.Projects)
+        {
+            <article class="project-card">
+                <div class="d-flex justify-content-between align-items-start gap-3">
+                    <div>
+                        <span class="status-badge status-@project.Status.ToLowerInvariant().Replace(" ", "-")">@project.Status</span>
+                        <h2 class="h4 mt-3 mb-1">@project.Title</h2>
+                        <p class="small text-muted mb-0">By @project.Author</p>
+                    </div>
+                    <span class="project-id">#@project.Id</span>
+                </div>
+                <p class="project-description">@project.Description</p>
+                <p class="stack-label">Technology stack</p>
+                <p class="stack-value">@project.TechnologyStack</p>
+                <div class="project-meta">
+                    <span>@(project.StartDate?.ToString("MMM d, yyyy") ?? "No start date")</span>
+                    <span>@(project.EndDate?.ToString("MMM d, yyyy") ?? "No end date")</span>
+                </div>
+                <div class="card-actions">
+                    <a asp-page="Edit" asp-route-id="@project.Id">Edit</a>
+                    <a class="text-danger" asp-page="Delete" asp-route-id="@project.Id">Delete</a>
+                </div>
+            </article>
+        }
+    </div>
+}

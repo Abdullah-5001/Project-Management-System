@@ -1,0 +1,47 @@
+@model Software_Modelling_Technologies.Models.Project
+
+<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+<div class="row g-4">
+    <div class="col-md-8">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" placeholder="e.g. Customer portal" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Author" class="form-label"></label>
+        <input asp-for="Author" class="form-control" placeholder="Your name" />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control" rows="5" placeholder="What is this project about?"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <label asp-for="TechnologyStack" class="form-label"></label>
+        <input asp-for="TechnologyStack" class="form-control" placeholder="e.g. ASP.NET Core, Razor Pages, SQL Server" />
+        <span asp-validation-for="TechnologyStack" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Status" class="form-label"></label>
+        <select asp-for="Status" class="form-select">
+            <option>Planned</option>
+            <option>In progress</option>
+            <option>Completed</option>
+            <option>On hold</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="StartDate" class="form-label"></label>
+        <input asp-for="StartDate" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label asp-for="EndDate" class="form-label"></label>
+        <input asp-for="EndDate" class="form-control" />
+    </div>
+    <div class="col-12">
+        <label asp-for="RepositoryUrl" class="form-label"></label>
+        <input asp-for="RepositoryUrl" class="form-control" placeholder="https://github.com/..." />
+        <span asp-validation-for="RepositoryUrl" class="text-danger"></span>
+    </div>
+</div>
